@@ -32,7 +32,7 @@ export default class Feed extends Component {
     }
 
     registerToSocket = () => {
-        const socket = io('http://10.0.3.2:3333');
+        const socket = io('http://192.168.1.15:3333');
 
         // post, like
 
@@ -69,7 +69,7 @@ export default class Feed extends Component {
 
                                 <Image source={more} />
                             </View>
-                            <Image style={styles.feedImage} source={{ uri: `http://10.0.3.2:3333/files/${item.image}` }} />
+                            <Image style={styles.feedImage} source={{ uri: `http://192.168.1.15:3333/files/${item.image}` }} />
 
                             <View style={styles.feedItemFooter}>
                                 <View style={styles.actions}>
@@ -103,12 +103,11 @@ const styles = StyleSheet.create({
     },
 
     feedItem: {
-        marginTop: 20
+        marginTop: 20,
+        marginHorizontal: 15
     },
 
-    feedItemHeader: {
-        paddingHorizontal: 15,
- 
+    feedItemHeader: { 
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -128,11 +127,6 @@ const styles = StyleSheet.create({
     feedImage: {
         width: '100%',
         height: 400,
-        margin: 15,
-    },
-
-    feedItemFooter: {
-        paddingHorizontal: 15,
     },
 
     actions: {
